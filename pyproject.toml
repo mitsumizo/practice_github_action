@@ -1,0 +1,45 @@
+[project]
+name="prodomo"
+version="0.0.1"
+description="ポロドモテクニックを利用したサイト"
+readme="README.md"
+requires-python=">=3.12"
+
+# APIサーバとしての依存ライブラリ
+dependencies = [
+    "django==5.0" 
+]
+
+# 任意の依存項目
+[project.optional-dependencies]
+test = []
+
+[tool.pytest.ini_options]
+pythonpath = "./"
+testpath = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+
+line-length = 160
+
+ignore = []
+
+# 無視するファイル
+exclude = [
+    "./*/__init__.py"
+]
+
+select = ["ALL"]
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.ruff.pylint]
+max-args = 5
+
+[tool.pylint.messages_control]
+disable = []
+
+[tool.ruff.format]
+quote-style = "double"
